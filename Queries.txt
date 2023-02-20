@@ -1,0 +1,73 @@
+//q1
+select *
+where{
+    ?s ?p ?o
+}
+
+//q2
+
+select *
+where{
+    ?s rdf:type :core
+}
+
+//q3
+PREFIX : <http://www.semesterproject.com/fastfacultyallocation#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+select ?Core_course_Name
+where{
+    
+    ?s :CourseName ?Core_course_Name
+ 
+}
+
+// q4
+
+select ?coordinator
+where{
+    
+   ?coordinator rdf:type :coordinator
+ 
+}
+
+//q5
+select *
+where{
+    
+    ?s rdfs:comment ?o
+ 
+}
+
+//q6
+select *
+where{
+    
+    ?s :NumCrs ?numcrs
+     FILTER (?numcrs="4"^^xsd:integer)
+}
+
+//q7
+select distinct ?Teacher_Name 
+where{
+    
+    ?Teacher_Name :Teaches ?course
+}
+
+//q8
+select ?numofcrs
+where{
+    
+   :KRR-BAI-J :NumCrs ?numofcrs
+}
+//q9
+select *
+where{
+    
+   :Dr._Hammad_Majeed rdf:type ?RankOfTeacher
+}
+//q10
+
+
+
+
