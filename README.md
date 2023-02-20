@@ -13,7 +13,8 @@ The selected domain of the project is Knowledge driven application for Teaching 
 
 # Dataset Description
 
-# The dataset contains the following attributes mentioned as follows: <br />
+The dataset contains the following attributes mentioned as follows: <br />
+
 Code: Course Code for each course. <br />
 Course: Course Name <br />
 CHS: Number of Credit Hours for each Course. <br />
@@ -43,6 +44,38 @@ Following are the competency questions that are we aiming to query from the fina
 15. User should be able to query the section-wise allocation of any teacher. <br />
 16. User should be able to query the number of courses any teacher teaches. <br />
 
+# External Data Set Link
 
+For faculty designation, we have used an external link http://isb.nu.edu.pk/Faculty/allfaculty. <br />
 
+# Modeling Decisions
 
+1. Mapped all the classes and subclasses as present in the conceptual model. <br />
+2. Made teacher and course class disjoint <br />
+3. Made visiting subclass disjoint with all sibling classes <br />
+4. Object property Restriction on visiting for teaches have max cardinality 4 <br />
+5. Object property Restriction on visiting for teaches have min cardinality 1 <br />
+6. Mad coordinator class disjoint only with visiting class <br />
+7. Made the professor’s class disjoint with the lecturer and visiting <br />
+8. Object property Restriction professor on teaches have max cardinality 4 <br />
+9. Object property Restriction professor on teaches have min cardinality 1 <br />
+10. Made assistant professor class disjoint with the professor, lecturer, and visiting <br />
+11. Object property Restriction assistant professor on teaches have max cardinality 4 <br />
+12. Object property Restriction assistant professor on teaches have min cardinality 1 <br />
+13. Made lecturer class disjoint with the professor, assistant professor, and visiting <br />
+14. Object property Restriction Lecturer on teaches have max cardinality 4 <br />
+15. Object property Restriction Lecturer on teaches have min cardinality 1 <br />
+16. Made object property HasNumCRs and IsOfNumCRs transitive as well inverse <br />
+17. Made teacher a named class <br />
+18. Made the object property section a functional class <br />
+19. Made. the object property Teaches functional <br />
+20. Object property Teaches has domain teacher and range Course <br />
+21. Object restriction property on Courses, i-e course HasCoordinator Some Coordinator <br />
+22. Object restriction property on Teacher i-e teaches some course <br />
+23. Made the Course an enumerated class i-e covering of core or elective <br />
+24. Data property Course ID have domain Course and range rdfs: Literal <br />
+25. Data property Num Crs (No. of CRs) have domain Course and range xsd:int <br />
+26. Data property HasCoord have domain Course and range rdfs: Literal <br />
+27. Data property CourseName have domain Course and range rdfs: Literal <br />
+28. Data property SectionName have domain Course and range rdfs: Literal <br />
+29. Data property Restriction on NumCRs have max cardinality 4 <br />
