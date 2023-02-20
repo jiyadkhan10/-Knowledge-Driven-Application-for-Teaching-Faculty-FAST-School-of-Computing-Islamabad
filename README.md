@@ -79,3 +79,13 @@ For faculty designation, we have used an external link http://isb.nu.edu.pk/Facu
 27. Data property CourseName have domain Course and range rdfs: Literal <br />
 28. Data property SectionName have domain Course and range rdfs: Literal <br />
 29. Data property Restriction on NumCRs have max cardinality 4 <br />
+
+# Languages
+1. Python <br />
+2. Ontology Language <br />
+
+# Note
+
+The Description.pdf contains the detailed description of this repository.
+
+
