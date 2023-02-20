@@ -6,10 +6,11 @@ CS4102 Introduction to Knowledge Graphs and Linked Data <br />
 
 # Description
 
-# Data Set Link
-https://docs.google.com/spreadsheets/d/1z4w8Y6v5mwOeyAsztaLcoPqtQOqJJT7jtivVWUcdehQ/edit#gid=0 <br />
-# Domain Description
 The selected domain of the project is Knowledge driven application for Teaching Faculty FAST School of computing Islamabad for Fall 2022. For this purpose, we’ll be using the FAST NUCES "Courses Allocation, Fall-2022 Semester" data set, communicated to the students via email. The dataset contains all the information regarding all the courses offered in the semester, course code, and Teacher allocated to each course. The data will be discussed in detail later on. Our end Product will be a knowledge-driven application for our university that can answer the mentioned competency questions. Our goal is to create an ontology that could help in the analysis of any type of faculty allocation to any course. <br />
+
+# Dataset Link
+
+https://docs.google.com/spreadsheets/d/1z4w8Y6v5mwOeyAsztaLcoPqtQOqJJT7jtivVWUcdehQ/edit#gid=0 <br />
 
 # Dataset Description
 
