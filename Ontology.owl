@@ -1,0 +1,2587 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semesterproject.com/fastfacultyallocation#"
+     xml:base="http://www.semesterproject.com/fastfacultyallocation"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semesterproject.com/fastfacultyallocation">
+        <rdfs:comment xml:lang="en">This is antology made for faculty allocation w.r.t courses for Fall 2022 semester of  Fast isb Campus</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#OnLeave -->
+
+    <owl:ObjectProperty rdf:about="http://www.semesterproject.com/fastfacultyallocation#OnLeave">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semesterproject.com/fastfacultyallocation#OnLeave"/>
+                <owl:someValuesFrom rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Teacher"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.semesterproject.com/fastfacultyallocation#Teaches">
+        <rdfs:domain rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Teacher"/>
+        <rdfs:range rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Courses"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#hascoord -->
+
+    <owl:ObjectProperty rdf:about="http://www.semesterproject.com/fastfacultyallocation#hascoord"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#CourseID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semesterproject.com/fastfacultyallocation#CourseID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Courses"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#CourseName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semesterproject.com/fastfacultyallocation#CourseName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Courses"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#NumCrs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semesterproject.com/fastfacultyallocation#NumCrs">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Courses"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#SectionName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semesterproject.com/fastfacultyallocation#SectionName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Courses"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#offeredIn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semesterproject.com/fastfacultyallocation#offeredIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Courses -->
+
+    <owl:Class rdf:about="http://www.semesterproject.com/fastfacultyallocation#Courses">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semesterproject.com/fastfacultyallocation#core"/>
+                    <rdf:Description rdf:about="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Teacher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Teacher -->
+
+    <owl:Class rdf:about="http://www.semesterproject.com/fastfacultyallocation#Teacher"/>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#assistanet_professor -->
+
+    <owl:Class rdf:about="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor">
+        <rdfs:subClassOf rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Teacher"/>
+        <owl:disjointWith rdf:resource="http://www.semesterproject.com/fastfacultyallocation#associate_professor"/>
+        <owl:disjointWith rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <owl:disjointWith rdf:resource="http://www.semesterproject.com/fastfacultyallocation#professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#associate_professor -->
+
+    <owl:Class rdf:about="http://www.semesterproject.com/fastfacultyallocation#associate_professor">
+        <rdfs:subClassOf rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Teacher"/>
+        <owl:disjointWith rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <owl:disjointWith rdf:resource="http://www.semesterproject.com/fastfacultyallocation#professor"/>
+        <owl:disjointWith rdf:resource="http://www.semesterproject.com/fastfacultyallocation#visiting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#coordinator -->
+
+    <owl:Class rdf:about="http://www.semesterproject.com/fastfacultyallocation#coordinator">
+        <rdfs:subClassOf rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Teacher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#core -->
+
+    <owl:Class rdf:about="http://www.semesterproject.com/fastfacultyallocation#core">
+        <rdfs:subClassOf rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Courses"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#elective -->
+
+    <owl:Class rdf:about="http://www.semesterproject.com/fastfacultyallocation#elective">
+        <rdfs:subClassOf rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Courses"/>
+        <rdfs:comment>Elective is an optional couerse for a student</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#lecturer -->
+
+    <owl:Class rdf:about="http://www.semesterproject.com/fastfacultyallocation#lecturer">
+        <rdfs:subClassOf rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Teacher"/>
+        <owl:disjointWith rdf:resource="http://www.semesterproject.com/fastfacultyallocation#professor"/>
+        <owl:disjointWith rdf:resource="http://www.semesterproject.com/fastfacultyallocation#visiting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#professor -->
+
+    <owl:Class rdf:about="http://www.semesterproject.com/fastfacultyallocation#professor">
+        <rdfs:subClassOf rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Teacher"/>
+        <owl:disjointWith rdf:resource="http://www.semesterproject.com/fastfacultyallocation#visiting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#visiting -->
+
+    <owl:Class rdf:about="http://www.semesterproject.com/fastfacultyallocation#visiting">
+        <rdfs:subClassOf rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Teacher"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Adil_Majeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Adil_Majeed">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Adnan_Tariq -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Adnan_Tariq">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ahmad_Din -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ahmad_Din">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ahmad_Raza_Shahid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ahmad_Raza_Shahid">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Akhtar_Jamil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Akhtar_Jamil">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Amina_Asif -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Amina_Asif">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Amna_Basharat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Amna_Basharat">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Amna_Irum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Amna_Irum">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Asif_Naeem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Asif_Naeem">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Atif_Jilani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Atif_Jilani">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ayesha_Kamran -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ayesha_Kamran">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shams_Farooq"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shams_Farooq"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-C">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Sobia_Rasheed"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-C</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-D">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Rohail_Gulbaz"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-D</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-E -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-E">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Rohail_Gulbaz"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-E</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-F -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-F">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shehr_Bano"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-F</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-G -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-G">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shehr_Bano"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-G</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-H -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-H">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shehr_Bano"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-H</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-V -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-V">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Sobia_Rasheed"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-V</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-Y -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-Y">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shams_Farooq"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-Y</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-Z -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-Z">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Niaz_Ahmed"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-Z</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#COAL-BCY-T -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#COAL-BCY-T">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Sobia_Rasheed"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EE-2003</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Computer Organization &amp; Assembly Language</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCY-T</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DIP-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DIP-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shoaib_Mehboob"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4055</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Digital Image Processing</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DL-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DL-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Muneeb_Ullah"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4045</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Deep Learning for Perception</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BAI-J -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BAI-J">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Hassan_Raza"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-J</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BAI-K -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BAI-K">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Hassan_Raza"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-K</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Adnan_Tariq"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BCS-B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Adnan_Tariq"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BCS-C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-C">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Marium_Hida"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-C</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BCS-D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-D">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Marium_Hida"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-D</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BCS-E -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-E">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Owais_Idrees"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-E</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BCS-F -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-F">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Owais_Idrees"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-F</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BCS-G -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-G">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Owais_Idrees"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-G</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BCY-T -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BCY-T">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Zainab_Abaid"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCY-T</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BDS-M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BDS-M">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Muhammad_Ishtiaq"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-M</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BDS-N -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BDS-N">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Muhammad_Ishtiaq"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-N</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BSE-P -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BSE-P">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Maheen_Arshad"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-P</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DS-BSE-Q -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DS-BSE-Q">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Maheen_Arshad"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-Q</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BAI-J -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BAI-J">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Usman_Habib"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-J</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BAI-K -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BAI-K">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Usman_Habib"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-K</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Muhammad_Arshad_Islam"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Muhammad_Arshad_Islam"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-C">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Amna_Irum"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-C</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-D">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Amna_Irum"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-D</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-E -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-E">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Ahmad_Din"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-E</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-F -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-F">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Majid_Hussain"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-F</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-G -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-G">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Majid_Hussain"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-G</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-H -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-H">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Amna_Irum"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-H</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-V -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-V">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Majid_Hussain"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-V</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-Y -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-Y">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Ahmad_Din"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-Y</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-Z -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-Z">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Ahmad_Din"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-Z</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BCY-T -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BCY-T">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Subhan_Ullah"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCY-T</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BDS-M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BDS-M">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Saira_Qamar"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-M</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BDS-N -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BDS-N">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Saira_Qamar"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-N</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DTS-BDS-U -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DTS-BDS-U">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Saira_Qamar"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1005</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Discrete Structures</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-N</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DW-BAI-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DW-BAI-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Asif_Naeem"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4033</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Data Warehousing</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2021</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DevOPs-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DevOPs-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Saim"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4067</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">DevOPs</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2021</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#DevOPs-BCS-B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#DevOPs-BCS-B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Saim"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4067</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">DevOPs</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2021</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Adnan_Tariq -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Adnan_Tariq">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-B"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#B&amp;C-BCS-A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Ahmad_Din -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Ahmad_Din">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#associate_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-E"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Ahmad_Raza_Shahid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Ahmad_Raza_Shahid">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#NLP-BCS-A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Akhtar_Jamil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Akhtar_Jamil">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1D"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1E"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Amina_Asif -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Amina_Asif">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#IIBI-BAI-A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Amna_Basharat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Amna_Basharat">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#KGLD-BCS-A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#KRR-BAI-J"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#KRR-BAI-K"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Asif_Naeem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Asif_Naeem">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DW-BAI-A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Atif_Jilani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Atif_Jilani">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Hammad_Majeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Hammad_Majeed">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#MMD-BCS-A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Hasan_Mujtaba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Hasan_Mujtaba">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1C"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1C"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Irum_Inayat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Irum_Inayat">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#associate_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#HCI-BSE-P"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#HCI-BSE-Q"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Khubaib_Amjad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Khubaib_Amjad">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#SRE-BSE-P"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#SRE-BSE-Q"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Maryam_Abdul_Ghafoor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Maryam_Abdul_Ghafoor">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1D"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1G"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Mirza_Omer_Beg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Mirza_Omer_Beg">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#associate_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#GTA-BAI-A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Mudassar_Aslam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Mudassar_Aslam">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Muhammad_Aleem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Muhammad_Aleem">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1J"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1K"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Muhammad_Arshad_Islam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Muhammad_Arshad_Islam">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Muhammad_Ishtiaq -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Muhammad_Ishtiaq">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#visiting"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BDS-M"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BDS-N"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Muneeb_Ullah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Muneeb_Ullah">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DL-BCS-A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Naveed_Ahmad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Naveed_Ahmad">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1C"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Niaz_Ahmed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Niaz_Ahmed">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#visiting"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-Z"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Qaiser_Shafi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Qaiser_Shafi">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#visiting"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#NCS-1-BCY-T"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Shujaat_Hussain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Shujaat_Hussain">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#B&amp;C-BCS-B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Subhan_Ullah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Subhan_Ullah">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BCY-T"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Usman_Habib -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Usman_Habib">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#associate_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BAI-J"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BAI-K"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Uzair_Khan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Uzair_Khan">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1E"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1F"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Dr._Zainab_Abaid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Dr._Zainab_Abaid">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BCY-T"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#EHCP-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#EHCP-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Mehmood_Ul_Hassan"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4061</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Ethical Hacking Concepts and Practices</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#GTA-BAI-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#GTA-BAI-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Mirza_Omer_Beg"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">AI-4004</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Game Theory &amp; Its Applications</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2021</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#HCI-BSE-P -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#HCI-BSE-P">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Irum_Inayat"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2007</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Human Computer Interaction</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-P</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#HCI-BSE-Q -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#HCI-BSE-Q">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Irum_Inayat"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-2007</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Human Computer Interaction</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-Q</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Hammad_Majeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Hammad_Majeed">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Hasan_Mujtaba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Hasan_Mujtaba">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Hassan_Raza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Hassan_Raza">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Humera_Sabir -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Humera_Sabir">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#IDS-BDS-M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#IDS-BDS-M">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Umair_Arshad"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">DS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Introduction to Data Science</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-M</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2021</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#IDS-BDS-N -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#IDS-BDS-N">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Humera_Sabir"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">DS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Introduction to Data Science</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-N</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2021</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#IDS-BDS-U -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#IDS-BDS-U">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Humera_Sabir"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">DS-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Introduction to Data Science</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-U</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2021</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#IIBI-BAI-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#IIBI-BAI-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Amina_Asif"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4054</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Intro. to Bio-Informatics</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2021</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ifrah_Qaiser -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ifrah_Qaiser">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Irum_Inayat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Irum_Inayat">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Jawad_Hassan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Jawad_Hassan">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#KGLD-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#KGLD-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Amna_Basharat"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4102</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Intro. to Knowledge Graph and Linked Data</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#KRR-BAI-J -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#KRR-BAI-J">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Amna_Basharat"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">AI-3001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Knowledge Representation &amp; Reasoning</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-J</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#KRR-BAI-K -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#KRR-BAI-K">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Amna_Basharat"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">AI-3001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Knowledge Representation &amp; Reasoning</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-K</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Khateeb_Khan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Khateeb_Khan">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Khubaib_Amjad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Khubaib_Amjad">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#MMD-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#MMD-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Hammad_Majeed"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4080</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Mining Massive Datasets</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Maheen_Arshad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Maheen_Arshad">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Majid_Hussain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Majid_Hussain">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Marium_Hida -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Marium_Hida">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Maryam_Abdul_Ghafoor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Maryam_Abdul_Ghafoor">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mehmood_Ul_Hassan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mehmood_Ul_Hassan">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mirza_Omer_Beg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mirza_Omer_Beg">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Adil_Majeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Adil_Majeed">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1B"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1D"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Hassan_Raza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Hassan_Raza">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BAI-J"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BAI-K"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Jawad_Hassan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Jawad_Hassan">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1C"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1D"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Khateeb_Khan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Khateeb_Khan">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#visiting"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#SPM-BCS-A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#SPM-BCS-B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Majid_Hussain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Majid_Hussain">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-F"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-G"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-V"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Mehmood_Ul_Hassan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Mehmood_Ul_Hassan">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#visiting"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#EHCP-BCS-A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Owais_Idrees -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Owais_Idrees">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-E"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-F"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-G"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Rohail_Gulbaz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Rohail_Gulbaz">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-D"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-E"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Saad_Salman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Saad_Salman">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#SMD-BCS-A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#SMD-BCS-B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Saim -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Saim">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#visiting"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DevOPs-BCS-A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DevOPs-BCS-B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Shams_Farooq -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Shams_Farooq">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-B"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-Y"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Shehreyar_Rashid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Shehreyar_Rashid">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1F"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1G"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1H"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Shoaib_Mehboob -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Shoaib_Mehboob">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DIP-BCS-A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mr._Umair_Arshad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mr._Umair_Arshad">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#IDS-BDS-M"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PAI-BAI-J"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PAI-BAI-K"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ms._Amna_Irum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ms._Amna_Irum">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#assistanet_professor"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-C"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-D"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BCS-H"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ms._Ayesha_Kamran -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ms._Ayesha_Kamran">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1B"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1D"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ms._Humera_Sabir -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ms._Humera_Sabir">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#IDS-BDS-N"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#IDS-BDS-U"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ms._Ifrah_Qaiser -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ms._Ifrah_Qaiser">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1B"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1C"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ms._Maheen_Arshad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ms._Maheen_Arshad">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BSE-P"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BSE-Q"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ms._Marium_Hida -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ms._Marium_Hida">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-C"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DS-BCS-D"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ms._Saira_Qamar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ms._Saira_Qamar">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BDS-M"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BDS-N"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#DTS-BDS-U"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ms._Shehr_Bano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ms._Shehr_Bano">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-F"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-G"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-H"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ms._Sidra_Khalid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ms._Sidra_Khalid">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#WP-BCS-A"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#WP-BCS-B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Ms._Sobia_Rasheed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Ms._Sobia_Rasheed">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#lecturer"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-C"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCS-V"/>
+        <Teaches rdf:resource="http://www.semesterproject.com/fastfacultyallocation#COAL-BCY-T"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Mudassar_Aslam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Mudassar_Aslam">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Muhammad_Aleem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Muhammad_Aleem">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Muhammad_Arshad_Islam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Muhammad_Arshad_Islam">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Muhammad_Ishtiaq -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Muhammad_Ishtiaq">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Muneeb_Ullah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Muneeb_Ullah">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#NCS-1-BCY-T -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#NCS-1-BCY-T">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Qaiser_Shafi"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CY-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Networks &amp; Cyber Security-1</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCY-T</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#NLP-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#NLP-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Ahmad_Raza_Shahid"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4063</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Natural Language Processing</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Naveed_Ahmad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Naveed_Ahmad">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Niaz_Ahmed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Niaz_Ahmed">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Owais_Idrees -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Owais_Idrees">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PAI-BAI-J -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PAI-BAI-J">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Umair_Arshad"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">AI-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming for AI</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-J</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PAI-BAI-K -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PAI-BAI-K">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Umair_Arshad"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">AI-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming for AI</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-K</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Ayesha_Kamran"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-1A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Ayesha_Kamran"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-1B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1C">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Hasan_Mujtaba"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-1C</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BAI-1D">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Ayesha_Kamran"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BAI-1D</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-1A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-1B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1C">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-1C</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1D">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Akhtar_Jamil"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-1D</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1E -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1E">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Akhtar_Jamil"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-1E</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1F -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1F">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shehreyar_Rashid"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-1F</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1G -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1G">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shehreyar_Rashid"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-1G</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1H -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1H">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shehreyar_Rashid"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-1H</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1J -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1J">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Muhammad_Aleem"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-1J</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1K -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCS-1K">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Muhammad_Aleem"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-1K</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Mudassar_Aslam"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCY-1A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Mudassar_Aslam"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCY-1B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1C">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Jawad_Hassan"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCY-1C</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BCY-1D">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Jawad_Hassan"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCY-1D</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Adil_Majeed"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-1A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Adil_Majeed"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-1B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1C">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Hasan_Mujtaba"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-1B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BDS-1D">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Adil_Majeed"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BDS-1D</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Atif_Jilani"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-1A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Atif_Jilani"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-1B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1C">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Naveed_Ahmad"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-1C</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1D">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Maryam_Abdul_Ghafoor"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-1D</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1E -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1E">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Uzair_Khan"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-1E</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1F -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1F">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Uzair_Khan"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-1F</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1G -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#PF-BSE-1G">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Maryam_Abdul_Ghafoor"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-1002</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Programming Fundamentals</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-1G</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Qaiser_Shafi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Qaiser_Shafi">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Rohail_Gulbaz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Rohail_Gulbaz">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#SMD-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#SMD-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Saad_Salman"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4039</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Software for Mobile Devices</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#SMD-BCS-B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#SMD-BCS-B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Saad_Salman"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4039</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Software for Mobile Devices</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#SPM-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#SPM-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Khateeb_Khan"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4044</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fundamentals of Software Project Management</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#SPM-BCS-B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#SPM-BCS-B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Khateeb_Khan"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4044</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fundamentals of Software Project Management</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#SRE-BSE-P -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#SRE-BSE-P">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Khubaib_Amjad"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">SE-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Software Requirements Engineering</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-P</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2021</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#SRE-BSE-Q -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#SRE-BSE-Q">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#core"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Khubaib_Amjad"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">SE-2001</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Software Requirements Engineering</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BSE-Q</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2021</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Saad_Salman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Saad_Salman">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Saim -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Saim">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Saira_Qamar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Saira_Qamar">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Shams_Farooq -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Shams_Farooq">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Shehr_Bano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Shehr_Bano">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Shehreyar_Rashid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Shehreyar_Rashid">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Shoaib_Mehboob -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Shoaib_Mehboob">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Shujaat_Hussain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Shujaat_Hussain">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Sidra_Khalid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Sidra_Khalid">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Sobia_Rasheed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Sobia_Rasheed">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Subhan_Ullah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Subhan_Ullah">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Umair_Arshad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Umair_Arshad">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Usman_Habib -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Usman_Habib">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Uzair_Khan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Uzair_Khan">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#WP-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#WP-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Sidra_Khalid"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4032</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Web Programming</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#WP-BCS-B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#WP-BCS-B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Sidra_Khalid"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4032</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Web Programming</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spring 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#Zainab_Abaid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#Zainab_Abaid">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#coordinator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#B&amp;C-BCS-A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#B&amp;C-BCS-A">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Adnan_Tariq"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4049</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Blockchain and Cryptocurrency</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-A</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semesterproject.com/fastfacultyallocation#B&amp;C-BCS-B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semesterproject.com/fastfacultyallocation#B&amp;C-BCS-B">
+        <rdf:type rdf:resource="http://www.semesterproject.com/fastfacultyallocation#elective"/>
+        <hascoord rdf:resource="http://www.semesterproject.com/fastfacultyallocation#Shujaat_Hussain"/>
+        <CourseID rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CS-4049</CourseID>
+        <CourseName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Blockchain and Cryptocurrency</CourseName>
+        <NumCrs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</NumCrs>
+        <SectionName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">BCS-B</SectionName>
+        <offeredIn rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fall 2022</offeredIn>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
